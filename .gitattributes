@@ -1,2 +1,74 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Documentation files - exclude from language statistics
+*.md linguist-documentation
+*.txt linguist-documentation
+README.md linguist-documentation
+LICENSE linguist-documentation
+CHANGELOG.md linguist-documentation
+
+# Python files - ensure they're properly detected and counted
+*.py linguist-detectable=true linguist-language=Python
+
+# Arduino/C++ files - mark as vendored to exclude from language stats
+*.ino linguist-vendored
+*.cpp linguist-vendored
+*.h linguist-vendored
+*.hpp linguist-vendored
+*.c linguist-vendored
+
+# Configuration files
+*.json linguist-language=JSON
+*.yaml linguist-language=YAML
+*.yml linguist-language=YAML
+*.toml linguist-language=TOML
+*.ini linguist-language=INI
+
+# Shell scripts
+*.sh linguist-language=Shell
+*.bash linguist-language=Shell
+
+# Exclude common non-code directories from statistics
+examples/* linguist-vendored
+vendor/* linguist-vendored
+node_modules/* linguist-vendored
+venv/* linguist-vendored
+env/* linguist-vendored
+*.egg-info/* linguist-generated
+
+# Image and media files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.mp4 binary
+*.webm binary
+
+# Archive files
+*.zip binary
+*.tar binary
+*.gz binary
+*.rar binary
+*.7z binary
+
+# Compiled files - mark as generated
+*.pyc linguist-generated
+*.pyo linguist-generated
+__pycache__/* linguist-generated
+*.so linguist-generated
+*.dylib linguist-generated
+*.dll linguist-generated
+*.exe binary
+
+# Lock files
+package-lock.json linguist-generated
+poetry.lock linguist-generated
+Pipfile.lock linguist-generated
+yarn.lock linguist-generated
+
+# Git files
+.gitignore linguist-generated
+.gitmodules linguist-generated
